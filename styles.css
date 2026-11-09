@@ -1,0 +1,12 @@
+body {
+	font-family: Arial, sans-serif;
+	margin: 5em 10em;
+	background-color: whitesmoke;
+	color: #212529;
+}
+h1 {
+	text-align: center;
+}
+h3 {
+	font-style: italic;
+}
