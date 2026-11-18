@@ -27,4 +27,29 @@
 		<br />
 		
 	</body>
+	<script type="text/javascript">
+			// Adding fake cookies to the Page for testing purposes:
+			const path = "example.com";
+
+			const value1 = "Hello World";
+			const value2 = "World Hello";
+			const value3 = "Test";
+			const value4 = "Testing";
+
+			const testCookie1 = "test_cookie1";
+			const cookie1 = (document.cookie =
+				testCookie1 + "=" + value1 + "; path=" + path);
+
+			const testCookie2 = "test_cookie2";
+			const cookie2 = (document.cookie =
+				testCookie2 + "=" + value2 + "; path=" + path);
+
+			const testCookie3 = "test_cookie3";
+			const cookie3 = (document.cookie =
+				testCookie3 + "=" + value3 + "; path=" + path);
+
+			const testCookie4 = "test_cookie4";
+			const cookie4 = (document.cookie =
+				testCookie4 + "=" + value4 + "; path=" + path);
+	</script>
 </html>
