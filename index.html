@@ -51,5 +51,130 @@
 			const testCookie4 = "test_cookie4";
 			const cookie4 = (document.cookie =
 				testCookie4 + "=" + value4 + "; path=" + path);
+		// Consent Status:
+			var consentStatus = false; // Because this page dosen't take your data. Your welcome.
+
+			// Versioning:
+			var date = new Date();
+			const year = date.getFullYear();
+			const month = (date.getMonth() + 1).toString().padStart(2, "0"); // Months are two digits
+			const day = date.getDay();
+			var bi = 1; // 1 = first half of month, 2 = second half of month
+			switch (true) {
+				case day <= 15:
+					bi = 1;
+					break;
+				case day > 15:
+					bi = 2;
+					break;
+				default:
+					bi = 0;
+			}
+			const version = year + "" + month + "." + bi + "." + "0";
+
+			// Console Logs:
+			console.info(
+				"%cWelcome to my example esite",
+				"padding: 8px; background-color: #829cb2; color: white; font-style: italic; border: 1px solid black; font-size: 1.5em;"
+			);
+
+			console.info(
+				"Script is for: %c" + path,
+				"padding: 4px; 6px; font-style: italic; border: 2px solid #829cb2; font-size: 12px;"
+			);
+
+			// Version Info:
+			console.info("Script Version Published: " + version);
+
+			// Consent Model:
+			console.info("The consent model is: " + "custom");
+
+			// Consent Status:
+			console.info(
+				"Consent has " +
+					(consentStatus ? "" : "not") +
+					" been given " +
+					(consentStatus ? "✅" : "❌")
+			);
+
+			// Category Status:
+			console.groupCollapsed("Current Category Status");
+			const categoryStatus = [
+				{
+					CustomGroupId: "1",
+					GroupName: "Strictly Necessary",
+					Status: "Always Active",
+				},
+				{
+					CustomGroupId: "4",
+					GroupName: "Functional",
+					Status: "Inactive",
+				},
+				{
+					CustomGroupId: "6",
+					GroupName: "Information Storage",
+					Status: "Inactive",
+				},
+				{
+					CustomGroupId: "7",
+					GroupName: "Content Selection",
+					Status: "Inactive",
+				},
+				{
+					CustomGroupId: "8",
+					GroupName: "Social Media",
+					Status: "Inactive",
+				},
+			];
+			console.table(categoryStatus, [
+				"CustomGroupId",
+				"GroupName",
+				"Status",
+			]);
+			console.groupEnd();
+
+			// Geolocation & Template Info:
+			const geolocation = "US";
+			const georule = "US";
+			const georuleGroup = "TEST Web US Geo Rule";
+			const templateName = "TEST Web US Template";
+
+			console.groupCollapsed("Geolocation and Template");
+			console.info("The Geolocation is " + geolocation);
+			console.info("The Geolocation rule is " + georule);
+			console.info("The GeolocationRuleGroup is " + georuleGroup);
+			console.info("The TemplateName is " + templateName);
+			console.groupEnd();
+
+			// Cookies Expected to be Blocked:
+			console.groupCollapsed(
+				"The cookies expected to be active if blocking has been implemented are"
+			);
+
+			const blockedCookies = [
+				{ Name: testCookie1, Host: path },
+				{ Name: testCookie2, Host: path },
+				{ Name: testCookie3, Host: path },
+				{ Name: testCookie4, Host: path },
+			];
+			console.table(blockedCookies, ["Name", "Host"]);
+
+			console.groupEnd();
+
+			// Instructions:
+			console.groupCollapsed(
+				"Here you will learn how to implement OT CMP Scripts onto a website."
+			);
+			console.log(
+				" \u2022 Choose one of the links in the table to get started."
+			);
+			console.log(
+				" \u2022 I reccomend familiarizing yourself with the first three."
+			);
+			console.log(
+				" \u2022 Test 1 & 2 are for you to learn how to debug common errors found in scripts that have been implemented on websites..."
+			);
+			console.log(" \u2022 Can you find all the errors?");
+			console.groupEnd();
 	</script>
 </html>
