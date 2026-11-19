@@ -78,13 +78,13 @@
 			const year = date.getFullYear();
 			const month = (date.getMonth() + 1).toString().padStart(2, "0"); // Months are two digits
 			const day = date.getDay();
-			var bi = 1; // 1 = first half of month, 2 = second half of month
+			var bi = 0; // 0 = first half of month, 1 = second half of month
 			switch (true) {
 				case day <= 15:
-					bi = 1;
+					bi = 0;
 					break;
 				case day > 15:
-					bi = 2;
+					bi = 1;
 					break;
 				default:
 					bi = 0;
